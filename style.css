@@ -1,0 +1,11 @@
+.tile{
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px #ccc;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
