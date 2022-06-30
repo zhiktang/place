@@ -16,11 +16,11 @@ for(let i=0;i<10;i++){
     const breakLine = document.createElement("br");
     document.getElementById("tiles").appendChild(breakLine);
 }
-function click(i,j){
+function send(i,j,c){
     const btn = document.getElementsByClassName("tile");
     btn[i*10+j].style.color = "#ff0000";
     btn[i*10+j].innerText = " ";
-    coods = JSON.stringify({i:i},{j:j});
+    coods = JSON.stringify({i:i},{j:j},{c:c});
     console.log(coods);
     const xhr = new XMLHttpRequest();
     xhr.open("POST","/click",true);

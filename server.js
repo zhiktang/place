@@ -28,7 +28,9 @@ app.all('/', function(req, res, next) {
 app.post('/click', function(req, res) {
     i = req.body.i;
     j = req.body.j;
+    c = req.body.c;
     console.log(i,j);
-
+    num = tiles[i*10+j];
+    tiles[i*10+j] = c;
 }
 );
