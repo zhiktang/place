@@ -3,15 +3,13 @@ for(let i=0;i<10;i++){
         const btn = document.createElement("button");
         btn.classList.add("tile");
         btn.innerText = " ";
-        btn.style.color = "#ff0000";
+        btn.style.backgroundColor = "#ffffff";
         document.getElementById("tiles").appendChild(btn);
         btn.addEventListener("click",function(){
-            btn.style.color = "#ff0000";
+            btn.style.backgroundColor = "#ff0000";
             btn.innerText = " ";
-            click(i,j);
-        }
-        );
-
+            //click(i,j);
+        });
     }
     const breakLine = document.createElement("br");
     document.getElementById("tiles").appendChild(breakLine);
