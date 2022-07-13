@@ -6,9 +6,10 @@ for(let i=0;i<10;i++){
         btn.style.backgroundColor = "#ffffff";
         document.getElementById("tiles").appendChild(btn);
         btn.addEventListener("click",function(){
-            btn.style.backgroundColor = "#ff0000";
-            btn.innerText = " ";
+            // btn.style.backgroundColor = "#ff0000";
+            // btn.innerText = " ";
             //click(i,j);
+            challenge(i,j);
         });
     }
     const breakLine = document.createElement("br");
@@ -38,4 +39,26 @@ function send(i,j,c){
             }
         }
     }
+}
+function challenge(i,j){
+    document.getElementById("prompt").removeAttribute("hidden");
+    let red = document.getElementById("red-button");
+    let blue = document.getElementById("blue-button");
+    let green = document.getElementById("green-button");
+    red.addEventListener("click",function(){
+        send(i,j,0);
+        document.getElementById("prompt").setAttribute("hidden","true");
+    }
+    );
+    blue.addEventListener("click",function(){
+        send(i,j,1);
+        document.getElementById("prompt").setAttribute("hidden","true");
+    }
+    );
+    green.addEventListener("click",function(){
+        send(i,j,2);
+        document.getElementById("prompt").setAttribute("hidden","true");
+    }
+    );
+    
 }
