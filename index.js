@@ -2,6 +2,7 @@ for(let i=0;i<10;i++){
     for(let j=0;j<10;j++){
         const btn = document.createElement("button");
         btn.classList.add("tile");
+        btn.id = i*10+j;
         btn.innerText = " ";
         btn.style.backgroundColor = "#ffffff";
         document.getElementById("tiles").appendChild(btn);
@@ -60,5 +61,5 @@ function challenge(i,j){
         document.getElementById("prompt").setAttribute("hidden","true");
     }
     );
-    
+
 }
