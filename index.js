@@ -1,3 +1,4 @@
+const colors = ["#ff0000","#0000ff","#00ff00"];
 for(let i=0;i<10;i++){
     for(let j=0;j<10;j++){
         const btn = document.createElement("button");
@@ -17,29 +18,36 @@ for(let i=0;i<10;i++){
     document.getElementById("tiles").appendChild(breakLine);
 }
 function send(i,j,c){
-    const btn = document.getElementsByClassName("tile");
-    btn[i*10+j].style.color = "#ff0000";
-    btn[i*10+j].innerText = " ";
-    coods = JSON.stringify({i:i},{j:j},{c:c});
-    console.log(coods);
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST","/click",true);
-    xhr.setRequestHeader("Content-Type","application/json");
-    xhr.send(coods);
-    xhr.onreadystatechange = function(){
-        if(xhr.readyState == 4 && xhr.status == 200){
-            const response = JSON.parse(xhr.responseText);
-            console.log(response);
-            if(response.status == "success"){
-                btn[i*10+j].style.color = "#00ff00";
-                btn[i*10+j].innerText = " ";
-            }
-            else{
-                btn[i*10+j].style.color = "#ff0000";
-                btn[i*10+j].innerText = " ";
-            }
-        }
-    }
+
+
+    // const btn = document.getElementsByClassName("tile");
+    // btn[i*10+j].style.color = "#ff0000";
+    // btn[i*10+j].innerText = " ";
+    // coods = JSON.stringify({i:i},{j:j},{c:c});
+    // console.log(coods);
+    // const xhr = new XMLHttpRequest();
+    // xhr.open("POST","/click",true);
+    // xhr.setRequestHeader("Content-Type","application/json");
+    // xhr.send(coods);
+    // xhr.onreadystatechange = function(){
+    //     if(xhr.readyState == 4 && xhr.status == 200){
+    //         const response = JSON.parse(xhr.responseText);
+    //         console.log(response);
+    //         if(response.status == "success"){
+    //             btn[i*10+j].style.color = "#00ff00";
+    //             btn[i*10+j].innerText = " ";
+    //         }
+    //         else{
+    //             btn[i*10+j].style.color = "#ff0000";
+    //             btn[i*10+j].innerText = " ";
+    //         }
+    //     }
+    // }
+
+    //prototype code
+    
+    const btn = document.getElementById(i*10+j);
+    btn.style.backgroundColor = colors[c];
 }
 function challenge(i,j){
     document.getElementById("prompt").removeAttribute("hidden");
