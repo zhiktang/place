@@ -1,4 +1,5 @@
 const colors = ["#ff0000","#0000ff","#00ff00"];
+var selected = 0;
 for(let i=0;i<10;i++){
     for(let j=0;j<10;j++){
         const btn = document.createElement("button");
@@ -46,10 +47,11 @@ function send(i,j,c){
 
     //prototype code
     
-    const btn = document.getElementById(i*10+j);
+    const btn = document.getElementById(selected);
     btn.style.backgroundColor = colors[c];
 }
 function challenge(i,j){
+    selected = i*10+j;
     document.getElementById("prompt").removeAttribute("hidden");
     let red = document.getElementById("red-button");
     let blue = document.getElementById("blue-button");
