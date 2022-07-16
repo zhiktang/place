@@ -73,3 +73,19 @@ function challenge(i,j){
     );
 
 }
+function update(){
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET","/update",true);
+    xhr.send();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4 && xhr.status == 200){
+            const response = JSON.parse(xhr.responseText);
+            console.log(response);
+            const array = response.array;
+            for(let i=0;i<array.length;i++){
+                const btn = document.getElementById(i);
+                btn.style.backgroundColor = colors[array[i]];
+            }
+        }
+    }
+}
