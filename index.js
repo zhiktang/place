@@ -1,4 +1,5 @@
-const colors = ["#ff0000","#0000ff","#00ff00"];
+const colors = ["#ff0000","#0000ff","#00ff00","#ffff00","#ff00ff","#00ffff","#000000","#ffffff"];
+// red green blue yellow purple cyan white black
 var selected = 0;
 for(let i=0;i<10;i++){
     for(let j=0;j<10;j++){
@@ -56,6 +57,11 @@ function challenge(i,j){
     let red = document.getElementById("red-button");
     let blue = document.getElementById("blue-button");
     let green = document.getElementById("green-button");
+    let yellow = document.getElementById("yellow-button");
+    let purple = document.getElementById("purple-button");
+    let cyan = document.getElementById("cyan-button");
+    let white = document.getElementById("white-button");
+    let black = document.getElementById("black-button");
     red.addEventListener("click",function(){
         send(i,j,0);
         document.getElementById("prompt").setAttribute("hidden","true");
@@ -68,6 +74,31 @@ function challenge(i,j){
     );
     green.addEventListener("click",function(){
         send(i,j,2);
+        document.getElementById("prompt").setAttribute("hidden","true");
+    }
+    );
+    yellow.addEventListener("click",function(){
+        send(i,j,3);
+        document.getElementById("prompt").setAttribute("hidden","true");
+    }
+    );
+    purple.addEventListener("click",function(){
+        send(i,j,4);
+        document.getElementById("prompt").setAttribute("hidden","true");
+    }
+    );
+    cyan.addEventListener("click",function(){
+        send(i,j,5);
+        document.getElementById("prompt").setAttribute("hidden","true");
+    }
+    );
+    white.addEventListener("click",function(){
+        send(i,j,6);
+        document.getElementById("prompt").setAttribute("hidden","true");
+    }
+    );
+    black.addEventListener("click",function(){
+        send(i,j,7);
         document.getElementById("prompt").setAttribute("hidden","true");
     }
     );
