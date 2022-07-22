@@ -1,6 +1,7 @@
 const colors = ["#ff0000","#0000ff","#00ff00","#ffff00","#ff00ff","#00ffff","#000000","#ffffff"];
 // red green blue yellow purple cyan white black
 var selected = 0;
+var lastselected = 0;
 for(let i=0;i<10;i++){
     for(let j=0;j<10;j++){
         const btn = document.createElement("button");
@@ -14,6 +15,10 @@ for(let i=0;i<10;i++){
             // btn.innerText = " ";
             //click(i,j);
             challenge(i,j);
+            lastselected = selected;
+            selected = i*10+j;
+            document.getElementById(lastselected).style.opacity = "1";
+            document.getElementById(selected).style.opacity = "0.5";
         });
     }
     const breakLine = document.createElement("br");
@@ -50,9 +55,9 @@ function send(i,j,c){
     
     const btn = document.getElementById(selected);
     btn.style.backgroundColor = colors[c];
+    btn.style.opacity = "1";
 }
 function challenge(i,j){
-    selected = i*10+j;
     document.getElementById("prompt").removeAttribute("hidden");
     let red = document.getElementById("red-button");
     let blue = document.getElementById("blue-button");

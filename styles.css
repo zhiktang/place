@@ -16,3 +16,9 @@ body{
     cursor: pointer;
     border-radius: 0.5rem;
 }
+.tile:hover{
+    opacity: 0.8;
+}
+.tile:focus{
+    outline: none;
+}
