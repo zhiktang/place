@@ -1,4 +1,4 @@
-const colors = ["#ff0000","#0000ff","#00ff00","#ffff00","#ff00ff","#00ffff","#000000","#ffffff"];
+const colors = ["#ff0000","#0000ff","#00ff00","#ffff00","#ff00ff","#00ffff","#ffffff","#000000"];
 // red green blue yellow purple cyan white black
 var selected = 0;
 var lastselected = 0;
